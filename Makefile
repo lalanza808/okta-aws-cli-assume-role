@@ -15,4 +15,7 @@ build: ## Build the Okta container
 
 show: ## Show the command to run to invoke the tool
 	@echo "Setup a shell alias. Stick this into .bashrc to make it persistent."
-	@echo "\n  > alias okta-awscli=\"docker run -v ~/.okta/config.properties:/home/okta/.okta/config.properties -v ~/.aws:/home/okta/.aws -it okta-awscli\""
+	@echo "\n  > alias okta-awscli=\"docker run --rm -v ~/.okta/config.properties:/home/okta/.okta/config.properties -v ~/.aws:/home/okta/.aws -it okta-awscli\""
+
+clean-containers: ## Remove stopped containers from the system
+	docker ps -aq | xargs docker rm
