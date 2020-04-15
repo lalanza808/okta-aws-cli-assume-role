@@ -14,6 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+set -e
+
 repo_url="https://github.com/oktadeveloper/okta-aws-cli-assume-role"
 dotokta="${HOME}/.okta"
 
